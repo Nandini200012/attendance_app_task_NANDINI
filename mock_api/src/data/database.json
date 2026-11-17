@@ -1,0 +1,564 @@
+{
+  "employees": [
+    {
+      "id": "emp-001",
+      "employee_id": "EMP-2048",
+      "employee_name": "Nandini N",
+      "profile_image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250",
+      "designation": "Senior Flutter Specialist",
+      "department": "Mobile Engineering",
+      "email": "nandini.n@rebs.io",
+      "phone_number": "+91 98765 43210",
+      "office_location": "REBS HQ (Bangalore Tech Park)",
+      "employee_status": "Active"
+    },
+    {
+      "id": "emp-002",
+      "employee_id": "EMP-2049",
+      "employee_name": "Aarav Sharma",
+      "profile_image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=250",
+      "designation": "Backend Tech Lead",
+      "department": "Cloud Infrastructure",
+      "email": "aarav.sharma@rebs.io",
+      "phone_number": "+91 98765 43211",
+      "office_location": "REBS HQ (Bangalore Tech Park)",
+      "employee_status": "Active"
+    },
+    {
+      "id": "emp-003",
+      "employee_id": "EMP-2050",
+      "employee_name": "Priya Patel",
+      "profile_image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=250",
+      "designation": "Product Designer",
+      "department": "UI/UX Design",
+      "email": "priya.patel@rebs.io",
+      "phone_number": "+91 98765 43212",
+      "office_location": "REBS HQ (Bangalore Tech Park)",
+      "employee_status": "Active"
+    },
+    {
+      "id": "emp-004",
+      "employee_id": "EMP-2051",
+      "employee_name": "Rajesh Kumar",
+      "profile_image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=250",
+      "designation": "QA Automation Engineer",
+      "department": "Quality Engineering",
+      "email": "rajesh.kumar@rebs.io",
+      "phone_number": "+91 98765 43213",
+      "office_location": "REBS HQ (Bangalore Tech Park)",
+      "employee_status": "Active"
+    },
+    {
+      "id": "emp-005",
+      "employee_id": "EMP-2052",
+      "employee_name": "Sneha Reddy",
+      "profile_image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=250",
+      "designation": "HR Business Partner",
+      "department": "People Operations",
+      "email": "sneha.reddy@rebs.io",
+      "phone_number": "+91 98765 43214",
+      "office_location": "REBS HQ (Bangalore Tech Park)",
+      "employee_status": "Active"
+    }
+  ],
+  "leaveBalances": {
+    "emp-001": {
+      "total_leave": 22,
+      "used_leave": 0,
+      "available_leave": 13,
+      "pending_leave": 9,
+      "leave_type_breakdown": {
+        "casual": {
+          "total": 12,
+          "used": 0,
+          "available": 5,
+          "pending": 7
+        },
+        "sick": {
+          "total": 10,
+          "used": 0,
+          "available": 8,
+          "pending": 2
+        }
+      }
+    },
+    "emp-002": {
+      "total_leave": 22,
+      "used_leave": 0,
+      "available_leave": 22,
+      "pending_leave": 0,
+      "leave_type_breakdown": {
+        "casual": {
+          "total": 12,
+          "used": 0,
+          "available": 12,
+          "pending": 0
+        },
+        "sick": {
+          "total": 10,
+          "used": 0,
+          "available": 10,
+          "pending": 0
+        }
+      }
+    },
+    "emp-003": {
+      "total_leave": 22,
+      "used_leave": 0,
+      "available_leave": 22,
+      "pending_leave": 0,
+      "leave_type_breakdown": {
+        "casual": {
+          "total": 12,
+          "used": 0,
+          "available": 12,
+          "pending": 0
+        },
+        "sick": {
+          "total": 10,
+          "used": 0,
+          "available": 10,
+          "pending": 0
+        }
+      }
+    },
+    "emp-004": {
+      "total_leave": 22,
+      "used_leave": 0,
+      "available_leave": 22,
+      "pending_leave": 0,
+      "leave_type_breakdown": {
+        "casual": {
+          "total": 12,
+          "used": 0,
+          "available": 12,
+          "pending": 0
+        },
+        "sick": {
+          "total": 10,
+          "used": 0,
+          "available": 10,
+          "pending": 0
+        }
+      }
+    },
+    "emp-005": {
+      "total_leave": 22,
+      "used_leave": 0,
+      "available_leave": 22,
+      "pending_leave": 0,
+      "leave_type_breakdown": {
+        "casual": {
+          "total": 12,
+          "used": 0,
+          "available": 12,
+          "pending": 0
+        },
+        "sick": {
+          "total": 10,
+          "used": 0,
+          "available": 10,
+          "pending": 0
+        }
+      }
+    }
+  },
+  "leaveRequests": [
+    {
+      "request_id": "LEV-476628",
+      "employee_id": "emp-001",
+      "leave_type": "Casual Leave",
+      "start_date": "2026-11-19",
+      "end_date": "2026-11-25",
+      "number_of_days": 7,
+      "reason": "vbcxcbbdcbbfdghbnf c",
+      "request_status": "pending",
+      "applied_date": "2026-11-17",
+      "rejection_reason": null
+    },
+    {
+      "request_id": "LEV-736748",
+      "employee_id": "emp-001",
+      "leave_type": "Sick Leave",
+      "start_date": "2026-11-17",
+      "end_date": "2026-11-18",
+      "number_of_days": 2,
+      "reason": "sick cannot be there",
+      "request_status": "pending",
+      "applied_date": "2026-11-17",
+      "rejection_reason": null
+    }
+  ],
+  "attendanceRecords": [
+    {
+      "id": "REC-20360205-0179",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2036-02-05",
+      "check_in_time": "2036-02-04T18:30:00.000Z",
+      "check_out_time": null,
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked In",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-3127",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T05:12:29.600Z",
+      "check_out_time": "2026-11-17T05:12:30.865Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20380922-8569",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2038-09-22",
+      "check_in_time": "2038-09-21T18:30:00.000Z",
+      "check_out_time": null,
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked In",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-6712",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T05:11:55.786Z",
+      "check_out_time": "2026-11-17T05:11:59.055Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-0092",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T05:10:49.184Z",
+      "check_out_time": "2026-11-17T05:10:52.417Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-5978",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T05:10:25.028Z",
+      "check_out_time": "2026-11-17T05:10:29.138Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-1393",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T05:00:31.887Z",
+      "check_out_time": "2026-11-17T05:00:35.654Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-0179",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T04:59:49.255Z",
+      "check_out_time": "2026-11-17T04:59:53.248Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-5018",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T04:55:13.124Z",
+      "check_out_time": "2026-11-17T04:55:20.806Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20261117-7979",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2026-11-17",
+      "check_in_time": "2026-11-17T04:54:17.032Z",
+      "check_out_time": "2026-11-17T04:54:33.615Z",
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked Out",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    },
+    {
+      "id": "REC-20330410-6999",
+      "employee_id": "EMP-2048",
+      "attendance_date": "2033-04-10",
+      "check_in_time": "2033-04-09T18:30:00.000Z",
+      "check_out_time": null,
+      "working_hours": "0h 00m",
+      "attendance_status": "Checked In",
+      "location": "REBS HQ",
+      "sync_status": "Synced"
+    }
+  ],
+  "attendanceEvents": [
+    {
+      "event_id": "evt-ec5145f4-7097-40de-9321-93fed14f601d",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2036-02-04T18:30:00.000Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-9187e840-fec7-4110-a5de-88b498db6d18",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T05:12:30.865Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-c794d0f3-f40d-46d5-abe4-da33094bfd4d",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T05:12:29.600Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-02bdf610-48ad-4a99-817e-d81d4378b1df",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2038-09-21T18:30:00.000Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-c5e0cbb4-3437-4668-883d-46b3264df6b6",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T05:11:59.055Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-15fbc86c-0f93-4a0b-8cf8-2d671552a913",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T05:11:55.786Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-4677da75-08cd-4da9-8fc4-0824b5983d0d",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T05:10:52.417Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-760644e8-8a0c-4ccf-84f3-adf320a4bd87",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T05:10:49.184Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-c9e5a08c-8ab1-4324-b5b4-a45d7aca7576",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T05:10:29.138Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-df1e4b6f-a21d-499b-912e-c1f5c93ae994",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T05:10:25.028Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-f46fc847-c99c-4c58-8d37-9f00deb699ac",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T05:00:35.654Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-7b292ab6-c648-4f78-bf35-a8160156e7bb",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T05:00:31.887Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-e857b109-041a-49b3-84a8-c0c5cba119ff",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T04:59:53.248Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-4fc4b085-af32-44fa-b48b-d1262cd3a2f0",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T04:59:49.255Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-65cab31f-19a2-480c-b736-62eba62be935",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T04:55:20.806Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-b5b54e22-a174-4e00-bc10-9d2323dce227",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T04:55:13.124Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-5a6dbbcc-4c7c-48cf-a5d4-05650d2f3f2e",
+      "employee_id": "EMP-2048",
+      "event_type": "check_out",
+      "timestamp": "2026-11-17T04:54:33.615Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-0175167b-8668-4f05-9329-8ac31130dd20",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2026-11-17T04:54:17.032Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    },
+    {
+      "event_id": "evt-8f2e3d64-6999-44fd-8eef-8519e5bafd39",
+      "employee_id": "EMP-2048",
+      "event_type": "check_in",
+      "timestamp": "2033-04-09T18:30:00.000Z",
+      "latitude": 10.6940374,
+      "longitude": 76.7345539,
+      "distance_meters": 0,
+      "location": "REBS HQ (Bangalore Tech Park)",
+      "device_info": "Pixel 8 Pro (Android 14)",
+      "sync_status": "synced",
+      "rejection_reason": null
+    }
+  ]
+}

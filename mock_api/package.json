@@ -1,0 +1,25 @@
+{
+  "name": "rebs-hrms-mock-api",
+  "version": "1.0.0",
+  "description": "REST Mock API for REBS HRMS Flutter Employee App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test_api.js"
+  },
+  "keywords": [
+    "rebs",
+    "hrms",
+    "mock",
+    "api",
+    "express"
+  ],
+  "author": "REBS HRMS Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1"
+  }
+}
+

@@ -1,0 +1,904 @@
+00:00 +0: loading /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart                                                                                         00:01 +0: loading /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart                                                                                         00:01 +0: loading /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart                                                                                                      00:01 +0: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: EmployeeModel tests fromJson & toJson roundtrip matches fields                                              00:01 +1: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: EmployeeModel tests fromJson & toJson roundtrip matches fields                                              00:01 +1: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: AttendanceRecord tests fromJson parses dates and status correctly                                           00:01 +2: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: AttendanceRecord tests fromJson parses dates and status correctly                                           00:01 +2: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: AttendanceEvent tests fromJson parses geofence coordinates and radius rejection                             00:01 +3: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: AttendanceEvent tests fromJson parses geofence coordinates and radius rejection                             00:01 +3: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: Leave models tests LeaveBalance and LeaveRequest serialization                                              00:01 +4: /Users/nandinin/personal_projects/attendance_register_app/test/models_test.dart: Leave models tests LeaveBalance and LeaveRequest serialization                                              00:01 +4: loading /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart                                                                                            00:01 +4: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: ... Queue Draining & Idempotency Tests 1. Reconnecting internet synchronizes pending queue        00:01 +4: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 1: API connected - fetches actual API data and caches it
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: {"StatusCode":6000,"data":{"id":"emp-001","employee_id":"EMP-2048","employee_name":"Nandini N","designation":"Senior Flutter Specialist","department":"Mobile Engineering","email":"nandini.n@rebs.io"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +4: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: Sync Reconnect, Queue Draining & Idempotency Tests 1. Reconnecting internet synchronizes pending queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-6242fc1c-5046-487c-a04e-603f182145c0, event_id: evt-6242fc1c-5046-487c-a04e-603f182145c0, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.499104, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +4: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 1: API connected - fetches actual API data and caches it
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: {"StatusCode":6000,"data":{"total_leave":22,"available_leave":7,"leave_type_breakdown":{"casual":{"total":12,"available":2},"sick":{"total":10,"available":5}}}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: {"StatusCode":6000,"data":[{"id":"REC-01","attendance_date":"2026-11-17","check_in_time":"09:15:00","attendance_status":"Present"}]}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +4: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: Sync Reconnect, Queue Draining & Idempotency Tests 1. Reconnecting internet synchronizes pending queue
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-6242fc1c-5046-487c-a04e-603f182145c0, event_id: evt-6242fc1c-5046-487c-a04e-603f182145c0, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.499104, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+00:01 +5: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: ... Queue Draining & Idempotency Tests 1. Reconnecting internet synchronizes pending queue        00:01 +5: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: Sync Reconnect, Queue Draining & Idempotency Tests 1. Reconnecting internet synchronizes pending queue
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Success","body":"Synced"},"data":{"status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +5: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 2: API disconnected - loads from cache and saves punch locally
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: {"StatusCode":6000,"data":{"id":"emp-001","employee_id":"EMP-2048","employee_name":"Nandini N","designation":"Senior Flutter Specialist","department":"Mobile Engineering","email":"nandini.n@rebs.io"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +6: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: ... Data Handling Flow TEST 2: API disconnected - loads from cache and saves punch locally     00:01 +6: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 2: API disconnected - loads from cache and saves punch locally
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-60f5ae55-049f-4ccb-b5a8-19758201a7d5, event_id: evt-60f5ae55-049f-4ccb-b5a8-19758201a7d5, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.573726, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+00:01 +6: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: Sync Reconnect, Queue Draining & Idempotency Tests 2. Duplicate submission prevention & idempotency handling
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +6: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 2: API disconnected - loads from cache and saves punch locally
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +6: /Users/nandinin/personal_projects/attendance_register_app/test/sync_idempotency_test.dart: Sync Reconnect, Queue Draining & Idempotency Tests 2. Duplicate submission prevention & idempotency handling
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-58395974-4e24-4d30-95ff-5222bb89ad08, event_id: evt-58395974-4e24-4d30-95ff-5222bb89ad08, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.579090, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-58395974-4e24-4d30-95ff-5222bb89ad08, event_id: evt-58395974-4e24-4d30-95ff-5222bb89ad08, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.579090, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 409] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6001,"message":{"title":"Conflict","body":"Duplicate event detected."},"data":null}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: ServerException: Duplicate event detected. (code: 6001)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +7: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: ... Data Handling Flow TEST 2: API disconnected - loads from cache and saves punch locally     00:01 +8: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: ... Data Handling Flow TEST 2: API disconnected - loads from cache and saves punch locally     00:01 +8: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 3: API reconnected - pending attendance synchronizes00:01 +8: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 3: API reconnected - pending attendance synchronizes
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-2a1fb130-5a4b-4d72-9b5a-0db935d82d52, event_id: evt-2a1fb130-5a4b-4d72-9b5a-0db935d82d52, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.606936, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-2a1fb130-5a4b-4d72-9b5a-0db935d82d52, event_id: evt-2a1fb130-5a4b-4d72-9b5a-0db935d82d52, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:35.606936, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6000,"data":{"status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +9: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_leave_sync_test.dart: LeaveManagementScreen renders PageSkeletonView initially for 1.8s                 00:01 +9: /Users/nandinin/personal_projects/attendance_register_app/test/online_offline_flow_test.dart: Online and Offline Data Handling Flow TEST 4: No cached data - throws NetworkException and shows empty state
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:01 +10: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_leave_sync_test.dart: LeaveManagementScreen renders PageSkeletonView initially for 1.8s                00:02 +10: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_leave_sync_test.dart: LeaveManagementScreen renders PageSkeletonView initially for 1.8s                00:02 +10: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_leave_sync_test.dart: LeaveManagementScreen renders PageSkeletonView initially for 1.8s                
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:02 +11: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_submission_and_history_test.dart: ... State & History Appearance 1. Once checked in, check in button is disabled  00:02 +12: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_submission_and_history_test.dart: ... State & History Appearance 1. Once checked in, check in button is disabled  00:02 +12: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_leave_sync_test.dart: ApplyLeaveScreen renders PageSkeletonView initially for 1.8s                     
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:02 +13: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_submission_and_history_test.dart: ... State & History Appearance 1. Once checked in, check in button is disabled  00:02 +14: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_submission_and_history_test.dart: ... State & History Appearance 1. Once checked in, check in button is disabled  00:02 +15: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_submission_and_history_test.dart: ... State & History Appearance 1. Once checked in, check in button is disabled  00:02 +16: /Users/nandinin/personal_projects/attendance_register_app/test/dashboard_integration_ui_test.dart: Dashboard Screen UI States Verification 1. Loading State: renders LinearProgressIndicator00:02 +16: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_submission_and_history_test.dart: Check In Button State & History Appearance 2. Check in and check out submitted appear in attendance history
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-8d15b554-9797-40e7-a0e3-b25c581f075d, event_id: evt-8d15b554-9797-40e7-a0e3-b25c581f075d, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:36.516902, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6000,"data":{"status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-78114969-27d2-4aec-917c-62ebc1b63c37, event_id: evt-78114969-27d2-4aec-917c-62ebc1b63c37, eventType: check_out, event_type: check_out, timestamp: 2026-11-17T09:11:36.549396, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6000,"data":{"status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-2b6e07c9-dffb-40b3-96b5-689abec91fc0, event_id: evt-2b6e07c9-dffb-40b3-96b5-689abec91fc0, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:36.564714, latitude: 12.971598, longitude: 77.594562, distanceMeters: 45.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6000,"data":{"status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: {"StatusCode":6000,"data":{"status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:02 +17: /Users/nandinin/personal_projects/attendance_register_app/test/dashboard_integration_ui_test.dart: Dashboard Screen UI States Verification 1. Loading State: renders LinearProgressIndicator00:03 +17: /Users/nandinin/personal_projects/attendance_register_app/test/dashboard_integration_ui_test.dart: Dashboard Screen UI States Verification 1. Loading State: renders LinearProgressIndicator00:03 +18: /Users/nandinin/personal_projects/attendance_register_app/test/dashboard_integration_ui_test.dart: Dashboard Screen UI States Verification 1. Loading State: renders LinearProgressIndicator00:03 +18: /Users/nandinin/personal_projects/attendance_register_app/test/dashboard_integration_ui_test.dart: ... Screen UI States Verification 2. Success State: displays API employee data in UI     00:03 +18: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_api_parsing_test.dart: GET /attendance JSON Parsing Tests parses all 18 records without FormatException or ServerException
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +19: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_api_parsing_test.dart: ... JSON Parsing Tests parses all 18 records without FormatException or ServerException    00:03 +19: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_api_parsing_test.dart: GET /attendance JSON Parsing Tests parses all 18 records without FormatException or ServerException
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: {
+  "StatusCode": 6000,
+  "message": {
+    "title": "Attendance Records",
+    "body": "Retrieved 18 records successfully"
+  },
+  "data": [
+    {"id":"REC-20261128","employee_id":"emp-001","attendance_date":"2026-11-28","check_in_time":"2026-11-28T09:00:00.000Z","check_out_time":null,"working_hours":"0h 00m","attendance_status":"Checked In","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-20261120","employee_id":"emp-001","attendance_date":"2026-11-20","check_in_time":"2026-11-20T09:05:00.000Z","check_out_time":null,"working_hours":"0h 00m","attendance_status":"Checked In","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1116","employee_id":"emp-001","attendance_date":"2026-11-16","check_in_time":"2026-11-16T09:15:30.000Z","check_out_time":"2026-11-16T14:15:00.000Z","working_hours":"4h 59m","attendance_status":"Checked Out","location":"REBS HQ (48m from perimeter)","sync_status":"Synced"},
+    {"id":"REC-2026-1115","employee_id":"emp-001","attendance_date":"2026-11-15","check_in_time":"2026-11-15T09:02:14.000Z","check_out_time":"2026-11-15T18:15:20.000Z","working_hours":"9h 13m","attendance_status":"Checked Out","location":"REBS HQ (52m from perimeter)","sync_status":"Synced"},
+    {"id":"REC-2026-1114","employee_id":"emp-001","attendance_date":"2026-11-14","check_in_time":"2026-11-14T08:55:00.000Z","check_out_time":"2026-11-14T17:45:10.000Z","working_hours":"8h 50m","attendance_status":"Checked Out","location":"REBS HQ (34m from perimeter)","sync_status":"Synced"},
+    {"id":"REC-2026-1113","employee_id":"emp-001","attendance_date":"2026-11-13","check_in_time":"2026-11-13T09:30:12.000Z","check_out_time":"2026-11-13T15:00:22.000Z","working_hours":"5h 30m","attendance_status":"Checked Out","location":"REBS HQ (62m from perimeter)","sync_status":"Synced"},
+    {"id":"REC-2026-1112","employee_id":"emp-001","attendance_date":"2026-11-12","check_in_time":"2026-11-12T10:10:05.000Z","check_out_time":null,"working_hours":"0h 00m","attendance_status":"Checked In","location":"Outside Radius (468m from perimeter)","sync_status":"Rejected"},
+    {"id":"REC-2026-1111","employee_id":"emp-001","attendance_date":"2026-11-11","check_in_time":"2026-11-11T09:00:00.000Z","check_out_time":"2026-11-11T18:00:00.000Z","working_hours":"9h 00m","attendance_status":"Checked Out","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1110","employee_id":"emp-001","attendance_date":"2026-11-10","check_in_time":"2026-11-10T09:00:00.000Z","check_out_time":"2026-11-10T18:00:00.000Z","working_hours":"9h 00m","attendance_status":"Checked Out","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1109","employee_id":"emp-001","attendance_date":"2026-11-09","check_in_time":"2026-11-09T09:00:00.000Z","check_out_time":"2026-11-09T18:00:00.000Z","working_hours":"9h 00m","attendance_status":"Checked Out","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1108","employee_id":"emp-001","attendance_date":"2026-11-08","check_in_time":null,"check_out_time":null,"working_hours":"0h 00m","attendance_status":"Weekend","location":"Weekly Off","sync_status":"Synced"},
+    {"id":"REC-2026-1107","employee_id":"emp-001","attendance_date":"2026-11-07","check_in_time":null,"check_out_time":null,"working_hours":"0h 00m","attendance_status":"Weekend","location":"Weekly Off","sync_status":"Synced"},
+    {"id":"REC-2026-1106","employee_id":"emp-001","attendance_date":"2026-11-06","check_in_time":"2026-11-06T09:00:00.000Z","check_out_time":"2026-11-06T18:00:00.000Z","working_hours":"9h 00m","attendance_status":"Checked Out","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1105","employee_id":"emp-001","attendance_date":"2026-11-05","check_in_time":null,"check_out_time":null,"working_hours":"0h 00m","attendance_status":"On Leave","location":"Approved Sick Leave","sync_status":"Synced"},
+    {"id":"REC-2026-1104","employee_id":"emp-001","attendance_date":"2026-11-04","check_in_time":null,"check_out_time":null,"working_hours":"0h 00m","attendance_status":"On Leave","location":"Approved Sick Leave","sync_status":"Synced"},
+    {"id":"REC-2026-1103","employee_id":"emp-001","attendance_date":"2026-11-03","check_in_time":"2026-11-03T09:00:00.000Z","check_out_time":"2026-11-03T18:00:00.000Z","working_hours":"9h 00m","attendance_status":"Checked Out","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1102","employee_id":"emp-001","attendance_date":"2026-11-02","check_in_time":"2026-11-02T09:00:00.000Z","check_out_time":"2026-11-02T18:00:00.000Z","working_hours":"9h 00m","attendance_status":"Checked Out","location":"REBS HQ","sync_status":"Synced"},
+    {"id":"REC-2026-1101","employee_id":"emp-001","attendance_date":"2026-11-01","check_in_time":null,"check_out_time":null,"working_hours":"0h 00m","attendance_status":"Weekend","location":"Weekly Off","sync_status":"Synced"}
+  ]
+}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +20: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_api_parsing_test.dart: ... JSON Parsing Tests parses all 18 records without FormatException or ServerException    00:03 +21: /Users/nandinin/personal_projects/attendance_register_app/test/attendance_api_parsing_test.dart: ... JSON Parsing Tests parses all 18 records without FormatException or ServerException    00:03 +21: loading /Users/nandinin/personal_projects/attendance_register_app/test/blocs_test.dart                                                                                                      00:03 +21: /Users/nandinin/personal_projects/attendance_register_app/test/blocs_test.dart: DashboardBloc emits DashboardLoaded on LoadDashboardData                                                    00:03 +21: /Users/nandinin/personal_projects/attendance_register_app/test/blocs_test.dart: DashboardBloc emits DashboardLoaded on LoadDashboardData                                                    
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Employee Profile","body":"Employee profile retrieved successfully"},"data":{"id":"emp-001","employee_id":"EMP-2048","employee_name":"Nandini N","profile_image":"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250","designation":"Senior Flutter Specialist","department":"Mobile Engineering","email":"nandini.n@rebs.io","phone_number":"+91 98765 43210","office_location":"REBS HQ (Bangalore Tech Park)","employee_status":"Active"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Leave Balance","body":"Leave balance retrieved successfully"},"data":{"total_leave":22,"used_leave":0,"available_leave":21,"pending_leave":1,"leave_type_breakdown":{"casual":{"total":12,"used":0,"available":12,"pending":0},"sick":{"total":10,"used":0,"available":9,"pending":1}}}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Attendance Records","body":"Retrieved 1 records successfully"},"data":[{"id":"REC-20261117","employee_id":"emp-001","attendance_date":"2026-11-17","check_in_time":"2026-11-17T03:12:49.175Z","check_out_time":null,"working_hours":"0h 00m","attendance_status":"Checked In","location":"REBS HQ","sync_status":"Synced"}]}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +22: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +22: /Users/nandinin/personal_projects/attendance_register_app/test/blocs_test.dart: AttendanceBloc emits AttendanceLoaded on LoadAttendanceMonth                                                
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Attendance Records","body":"Retrieved 1 records successfully"},"data":[{"id":"REC-20261117","employee_id":"emp-001","attendance_date":"2026-11-17","check_in_time":"2026-11-17T03:12:49.175Z","check_out_time":null,"working_hours":"0h 00m","attendance_status":"Checked In","location":"REBS HQ","sync_status":"Synced"}]}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +23: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +23: /Users/nandinin/personal_projects/attendance_register_app/test/blocs_test.dart: LeaveBloc emits LeaveLoaded on LoadLeaveData                                                                
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Leave Balance","body":"Leave balance retrieved successfully"},"data":{"total_leave":22,"used_leave":0,"available_leave":21,"pending_leave":1,"leave_type_breakdown":{"casual":{"total":12,"used":0,"available":12,"pending":0},"sick":{"total":10,"used":0,"available":9,"pending":1}}}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Leave Requests","body":"Retrieved 1 leave requests"},"data":[{"request_id":"LEV-553983","employee_id":"emp-001","leave_type":"Sick Leave","start_date":"2026-11-17","end_date":"2026-11-17","number_of_days":1,"reason":"sick I cant make it today","request_status":"pending","applied_date":"2026-11-17","rejection_reason":null}]}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +24: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 1 & 2: Launch App Online & Load/Cache Data                                                 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests EmployeeApiService parses GET /employee/me response correctly         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 1 & 2: Launch App Online & Load/Cache Data                                                 
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests EmployeeApiService parses GET /employee/me response correctly         
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 1 & 2: Launch App Online & Load/Cache Data                                                 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 1 & 2: Launch App Online & Load/Cache Data                                                 
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Employee Profile","body":"Employee profile retrieved successfully"},"data":{"id":"emp-001","employee_id":"EMP-2048","employee_name":"Nandini N","profile_image":"https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250","designation":"Senior Flutter Specialist","department":"Mobile Engineering","email":"nandini.n@rebs.io","phone_number":"+91 98765 43210","office_location":"REBS HQ (Bangalore Tech Park)","employee_status":"Active"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests EmployeeApiService parses GET /employee/me response correctly         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests EmployeeApiService parses GET /employee/me response correctly         
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Employee Profile","body":"Success"},"data":{"id":"emp-001","employee_id":"EMP-2048","employee_name":"Nandini N","designation":"Senior Flutter Specialist","department":"Mobile Engineering","email":"nandini.n@rebs.io","phone_number":"+91 98765 43210","office_location":"REBS HQ (Bangalore Tech Park)","employee_status":"Active"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +25: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +26: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +26: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+00:03 +26: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 1 & 2: Launch App Online & Load/Cache Data                                                 
+[DEMO 1&2] Fetched & cached profile in Hive: Nandini N
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 3, 4 & 5: Turn OFF Internet & Record Offline Punch                                         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 3, 4 & 5: Turn OFF Internet & Record Offline Punch                                         
+🚀 [API REQUEST] POST /attendance/events
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 3, 4 & 5: Turn OFF Internet & Record Offline Punch                                         
+📍 Full URL: http://127.0.0.1:39999/attendance/events
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 3, 4 & 5: Turn OFF Internet & Record Offline Punch                                         
+📦 Payload Parameters: {eventId: evt-f185aa77-2d35-492e-a3f2-f2cedb173447, event_id: evt-f185aa77-2d35-492e-a3f2-f2cedb173447, eventType: check_in, event_type: check_in, timestamp: 2029-02-25T00:00:00.000, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 38.5, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests DashboardBloc fetches employee data and emits DashboardLoaded         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 3, 4 & 5: Turn OFF Internet & Record Offline Punch                                         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://127.0.0.1:39999/attendance/events
+⚠️ Failure: ClientException with SocketException: Connection refused (OS Error: Connection refused, errno = 61), address = 127.0.0.1, port = 58870, uri=http://127.0.0.1:39999/attendance/events
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests DashboardBloc fetches employee data and emits DashboardLoaded         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Success","body":"OK"},"data":{"id":"emp-001","employee_id":"EMP-2048","employee_name":"Nandini N","designation":"Senior Flutter Specialist","department":"Mobile Engineering","email":"nandini.n@rebs.io"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +27: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 3, 4 & 5: Turn OFF Internet & Record Offline Punch                                         
+[DEMO 3,4,5] Offline Punch created: evt-f185aa77-2d35-492e-a3f2-f2cedb173447 (Pending)
+00:03 +28: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +28: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests DashboardBloc fetches employee data and emits DashboardLoaded         
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Leave Balance","body":"Leave balance retrieved successfully"},"data":{"total_leave":22,"used_leave":0,"available_leave":21,"pending_leave":1,"leave_type_breakdown":{"casual":{"total":12,"used":0,"available":12,"pending":0},"sick":{"total":10,"used":0,"available":9,"pending":1}}}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 200] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+00:03 +28: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 6 & 7: Restart Simulation & Verify Persistence                                             
+[DEMO 6&7] App restarted from disk. Event preserved: evt-f185aa77-2d35-492e-a3f2-f2cedb173447
+00:03 +29: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +29: /Users/nandinin/personal_projects/attendance_register_app/test/employee_api_test.dart: Employee API Integration Tests DashboardBloc fetches employee data and emits DashboardLoaded         
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Attendance Records","body":"Retrieved 1 records successfully"},"data":[{"id":"REC-20261117","employee_id":"emp-001","attendance_date":"2026-11-17","check_in_time":"2026-11-17T03:12:49.175Z","check_out_time":null,"working_hours":"0h 00m","attendance_status":"Checked In","location":"REBS HQ","sync_status":"Synced"}]}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +29: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 8 & 9: Turn Internet ON & Sync to Real Mock API                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-f185aa77-2d35-492e-a3f2-f2cedb173447, event_id: evt-f185aa77-2d35-492e-a3f2-f2cedb173447, eventType: check_in, event_type: check_in, timestamp: 2029-02-25T00:00:00.000, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 38.5, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:03 +30: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:03 +30: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 8 & 9: Turn Internet ON & Sync to Real Mock API                                            
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Attendance Event Synced","body":"Attendance check in recorded successfully."},"data":{"event_id":"evt-f185aa77-2d35-492e-a3f2-f2cedb173447","status":"synced","server_timestamp":"2026-11-17T03:41:37.679Z","distance_meters":0,"rejection_reason":null,"message":"Attendance check in recorded successfully."}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[DEMO 8&9] Event evt-f185aa77-2d35-492e-a3f2-f2cedb173447 synced successfully to Mock API!
+00:03 +31: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 10: Confirm Duplicate Events Are Not Created (Idempotency)                                 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-f185aa77-2d35-492e-a3f2-f2cedb173447, event_id: evt-f185aa77-2d35-492e-a3f2-f2cedb173447, eventType: check_in, event_type: check_in, timestamp: 2029-02-25T00:00:00.000, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 38.5, syncStatus: synced, sync_status: synced, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/required_assignment_tests_test.dart: Required Assignment Automated Tests 1. Check-out without check-in is rejected           
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 10: Confirm Duplicate Events Are Not Created (Idempotency)                                 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 409] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6001,"message":{"title":"Event Validation Failed","body":"Duplicate event detected. Event with ID 'evt-f185aa77-2d35-492e-a3f2-f2cedb173447' has already been processed."},"data":null}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/required_assignment_tests_test.dart: Required Assignment Automated Tests 1. Check-out without check-in is rejected           
+📦 Payload Parameters: {eventId: evt-08ec9abb-d6bd-4976-a43e-6acfcb893c4a, event_id: evt-08ec9abb-d6bd-4976-a43e-6acfcb893c4a, eventType: check_out, event_type: check_out, timestamp: 2026-11-17T09:11:37.683778, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 0.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 10: Confirm Duplicate Events Are Not Created (Idempotency)                                 
+⚠️ Failure: ServerException: Duplicate event detected. Event with ID 'evt-f185aa77-2d35-492e-a3f2-f2cedb173447' has already been processed. (code: 6001)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/required_assignment_tests_test.dart: Required Assignment Automated Tests 1. Check-out without check-in is rejected           
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +31: /Users/nandinin/personal_projects/attendance_register_app/test/live_offline_demo_test.dart: Step 10: Confirm Duplicate Events Are Not Created (Idempotency)                                 
+[DEMO 10] Server 409 handled cleanly. No duplicate created.
+00:04 +32: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:04 +32: /Users/nandinin/personal_projects/attendance_register_app/test/required_assignment_tests_test.dart: Required Assignment Automated Tests 1. Check-out without check-in is rejected           
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 422] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6001,"message":{"title":"Event Validation Failed","body":"Cannot check out without an active check-in for date 2026-11-20."},"data":null}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: ServerException: Cannot check out without an active check-in for date 2026-11-20. (code: 6001)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +33: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:04 +33: /Users/nandinin/personal_projects/attendance_register_app/test/required_assignment_tests_test.dart: Required Assignment Automated Tests 2. Overlapping leave dates are rejected             
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📦 Payload Parameters: {leave_type: casual, leaveType: casual, start_date: 2026-11-20, startDate: 2026-11-20, end_date: 2026-11-22, endDate: 2026-11-22, number_of_days: 3, numberOfDays: 3, reason: Vacation with family at resort}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 409] POST /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+📄 Response Body: {"StatusCode":6001,"message":{"title":"Validation Failed","body":"Overlapping leave request exists for the selected date range."},"data":null}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /leave/requests
+📍 Full URL: http://localhost:3000/leave/requests
+⚠️ Failure: ServerException: Overlapping leave request exists for the selected date range. (code: 6001)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +34: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:04 +35: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: REBS HRMS initial smoke test loads main navigation and branding                                            00:04 +35: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: LocationPermissionDialog displays prompt and returns correct user choice                                   00:04 +36: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: LocationPermissionDialog displays prompt and returns correct user choice                                   00:04 +36: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: SyncEventTile renders long UUID on narrow screen without overflow                                          00:04 +36: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: SyncEventTile renders long UUID on narrow screen without overflow                                          
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: FlutterError:<A RenderFlex overflowed by 32 pixels on the right.>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart:90:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart line 90
+The test description was:
+  SyncEventTile renders long UUID on narrow screen without overflow
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:04 +36 -1: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: SyncEventTile renders long UUID on narrow screen without overflow [E]                                   
+  Test failed. See exception logs above.
+  The test description was: SyncEventTile renders long UUID on narrow screen without overflow
+  
+
+To run this test again: /Users/nandinin/flutter/bin/cache/dart-sdk/bin/dart test /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart -p vm --plain-name 'SyncEventTile renders long UUID on narrow screen without overflow'
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: FlutterError:<A RenderFlex overflowed by 32 pixels on the right.>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart:127:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1059:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart line 127
+The test description was:
+  SyncEventTile renders long UUID on narrow screen without overflow
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:04 +36 -2: /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart: SyncEventTile renders long UUID on narrow screen without overflow [E]                                   
+  Test failed. See exception logs above.
+  The test description was: SyncEventTile renders long UUID on narrow screen without overflow
+  
+
+To run this test again: /Users/nandinin/flutter/bin/cache/dart-sdk/bin/dart test /Users/nandinin/personal_projects/attendance_register_app/test/widget_test.dart -p vm --plain-name 'SyncEventTile renders long UUID on narrow screen without overflow'
+00:04 +36 -2: loading /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart                                                                                           00:04 +36 -2: /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart: Offline Punch & Restart Persistence Tests 1. Check-in while online succeeds and marks synced     00:04 +36 -2: /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart: Offline Punch & Restart Persistence Tests 1. Check-in while online succeeds and marks synced     
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-4a04bdb7-c711-4fb1-bbdf-f45e62ffafb6, event_id: evt-4a04bdb7-c711-4fb1-bbdf-f45e62ffafb6, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:38.198533, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 0.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 201] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📄 Response Body: {"StatusCode":6000,"message":{"title":"Success","body":"Synced"},"data":{"event_id":"evt-1","status":"synced"}}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +37 -2: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: DashboardScreen renders PageSkeletonView initially for 1.8s                              00:04 +37 -2: /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart: Offline Punch & Restart Persistence Tests 2. Check-in while offline queues locally with unique ID
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-fe9d33e0-b003-402d-9623-5ae7b3f821d7, event_id: evt-fe9d33e0-b003-402d-9623-5ae7b3f821d7, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:38.242584, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 0.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: SocketException: No internet
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +38 -2: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: DashboardScreen renders PageSkeletonView initially for 1.8s                              00:04 +38 -2: /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart: Offline Punch & Restart Persistence Tests 3. Pending events survive app restart simulation       
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+📦 Payload Parameters: {eventId: evt-692e51f5-0156-47bf-a9e0-469a561dc5d3, event_id: evt-692e51f5-0156-47bf-a9e0-469a561dc5d3, eventType: check_in, event_type: check_in, timestamp: 2026-11-17T09:11:38.252593, latitude: 10.6940374, longitude: 76.7345539, distanceMeters: 0.0, syncStatus: pending, sync_status: pending, rejectionReason: null, deviceModel: Pixel 8 Pro (Android 14), device_info: Pixel 8 Pro (Android 14), networkType: Wi-Fi (REBS-Corp-5G), verificationMethod: GPS Geofence (200m Perimeter), employeeId: EMP-2048, employee_id: EMP-2048, location: REBS HQ (Bangalore Tech Park)}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] POST /attendance/events
+📍 Full URL: http://localhost:3000/attendance/events
+⚠️ Failure: SocketException: Offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +39 -2: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: DashboardScreen renders PageSkeletonView initially for 1.8s                              00:04 +39 -3: /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart: Offline Punch & Restart Persistence Tests 4. Offline punch outside configured radius is rejected locally [E]
+  Expected: <1>
+    Actual: <0>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test/offline_punch_test.dart 129:7                  main.<fn>.<fn>
+  
+Warning: At least one test in this suite creates an HttpClient. When running a test suite that uses
+TestWidgetsFlutterBinding, all HTTP requests will return status code 400, and no network request
+will actually be made. Any test expecting a real network connection and status code will fail.
+To test code that needs an HttpClient, provide your own HttpClient implementation to the code under
+test, so that your test can consistently provide a testable response to the code under test.
+
+To run this test again: /Users/nandinin/flutter/bin/cache/dart-sdk/bin/dart test /Users/nandinin/personal_projects/attendance_register_app/test/offline_punch_test.dart -p vm --plain-name 'Offline Punch & Restart Persistence Tests 4. Offline punch outside configured radius is rejected locally'
+00:04 +39 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: DashboardScreen renders PageSkeletonView initially for 1.8s                              
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /employee/me
+📍 Full URL: http://localhost:3000/employee/me
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /leave/balance
+📍 Full URL: http://localhost:3000/leave/balance
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:04 +40 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: DashboardScreen renders PageSkeletonView initially for 1.8s                              00:04 +40 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: AttendanceOverviewScreen renders PageSkeletonView initially for 1.8s                     00:04 +40 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: AttendanceOverviewScreen renders PageSkeletonView initially for 1.8s                     
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:05 +41 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: AttendanceOverviewScreen renders PageSkeletonView initially for 1.8s                     00:05 +41 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: AttendanceHistoryScreen renders PageSkeletonView initially for 1.8s                      00:05 +41 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: AttendanceHistoryScreen renders PageSkeletonView initially for 1.8s                      
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 [API REQUEST] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+🔍 Query Parameters: {month: 2026-11}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📥 [API RESPONSE 400] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+📄 Response Body: 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ [API ERROR] GET /attendance
+📍 Full URL: http://localhost:3000/attendance?month=2026-11
+⚠️ Failure: ServerException: Invalid response received from server (code: 400)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+00:05 +42 -3: /Users/nandinin/personal_projects/attendance_register_app/test/page_skeleton_loading_test.dart: AttendanceHistoryScreen renders PageSkeletonView initially for 1.8s                      00:05 +42 -3: Some tests failed.                                                                                                                                                                       

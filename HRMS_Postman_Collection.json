@@ -1,0 +1,509 @@
+{
+  "info": {
+    "_postman_id": "a4d8c2e1-7e89-4b65-9821-rebs-hrms-001",
+    "name": "REBS HRMS API Collection",
+    "description": "Comprehensive Postman Collection v2.1 for the REBS HRMS Mock REST API. Includes all implemented endpoints across System, Employees, Attendance (with GPS Geofence validation), and Leave Management.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string",
+      "description": "Base URL for the REBS HRMS API (use http://10.0.2.2:3000 for Android emulator)"
+    },
+    {
+      "key": "employeeId",
+      "value": "emp-001",
+      "type": "string",
+      "description": "Default test employee ID (Nandini N, EMP-2048)"
+    },
+    {
+      "key": "officeLat",
+      "value": "12.971598",
+      "type": "string",
+      "description": "Bangalore HQ office latitude"
+    },
+    {
+      "key": "officeLng",
+      "value": "77.594562",
+      "type": "string",
+      "description": "Bangalore HQ office longitude"
+    }
+  ],
+  "item": [
+    {
+      "name": "System & Health",
+      "description": "Endpoints to verify server connectivity and process health.",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            },
+            "description": "Checks the operational status and uptime of the REBS HRMS mock server."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "description": "Employee profile and directory management endpoints.",
+      "item": [
+        {
+          "name": "Get Current Employee Profile",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text",
+                "description": "Identifies the requesting employee"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/employee/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employee",
+                "me"
+              ]
+            },
+            "description": "Retrieves the authenticated employee profile details including name, corporate code, designation, department, and assigned office location."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Employee Directory",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/employee",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "employee"
+              ]
+            },
+            "description": "Retrieves the list of all 5 seed employees in the organization."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "description": "Attendance history, check-in, check-out, and GPS geofence validation endpoints.",
+      "item": [
+        {
+          "name": "Get Monthly Attendance History",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/attendance?month=2026-11",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "attendance"
+              ],
+              "query": [
+                {
+                  "key": "month",
+                  "value": "2026-11",
+                  "description": "Optional filter formatted as YYYY-MM"
+                }
+              ]
+            },
+            "description": "Returns consolidated daily attendance records for the specified month, including check-in/out times, working duration, and sync status."
+          },
+          "response": []
+        },
+        {
+          "name": "Record Check-in (Valid within 200m)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_id\": \"evt-checkin-{{$timestamp}}\",\n  \"employee_id\": \"{{employeeId}}\",\n  \"event_type\": \"check_in\",\n  \"timestamp\": \"{{$isoTimestamp}}\",\n  \"latitude\": 12.971612,\n  \"longitude\": 77.594589,\n  \"location\": \"REBS Bangalore HQ - Main Lobby\",\n  \"device_info\": \"Pixel 8 Pro (Android 14)\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/attendance/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "attendance",
+                "events"
+              ]
+            },
+            "description": "Records an attendance check-in within the allowable 200m office perimeter (~48m from HQ center). Returns HTTP 201 with StatusCode 6000."
+          },
+          "response": []
+        },
+        {
+          "name": "Record Check-in (Outside 200m Radius - 422 Rejection)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_id\": \"evt-out-of-bounds-{{$timestamp}}\",\n  \"employee_id\": \"{{employeeId}}\",\n  \"event_type\": \"check_in\",\n  \"timestamp\": \"{{$isoTimestamp}}\",\n  \"latitude\": 12.975210,\n  \"longitude\": 77.598420,\n  \"location\": \"Remote location (~468m away)\",\n  \"device_info\": \"Pixel 8 Pro (Android 14)\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/attendance/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "attendance",
+                "events"
+              ]
+            },
+            "description": "Demonstrates geofence boundary rejection. Coordinates are ~468m away from HQ (> 200.0m limit). Server flags the event as rejected and returns HTTP 422 with StatusCode 6001."
+          },
+          "response": []
+        },
+        {
+          "name": "Record Check-out (Valid check-out)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_id\": \"evt-checkout-{{$timestamp}}\",\n  \"employee_id\": \"{{employeeId}}\",\n  \"event_type\": \"check_out\",\n  \"timestamp\": \"{{$isoTimestamp}}\",\n  \"latitude\": 12.971598,\n  \"longitude\": 77.594562,\n  \"location\": \"REBS Bangalore HQ\",\n  \"device_info\": \"Pixel 8 Pro (Android 14)\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/attendance/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "attendance",
+                "events"
+              ]
+            },
+            "description": "Records an employee check-out punch. Calculates working hours between check-in and check-out and updates the consolidated daily record. Returns HTTP 201."
+          },
+          "response": []
+        },
+        {
+          "name": "Test Duplicate Event ID (409 Conflict)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"event_id\": \"EVT-STATIC-DUPLICATE-KEY-001\",\n  \"employee_id\": \"{{employeeId}}\",\n  \"event_type\": \"check_in\",\n  \"timestamp\": \"{{$isoTimestamp}}\",\n  \"latitude\": 12.971598,\n  \"longitude\": 77.594562,\n  \"location\": \"REBS HQ\",\n  \"device_info\": \"Test Client\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/attendance/events",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "attendance",
+                "events"
+              ]
+            },
+            "description": "Send this request twice with the same static event_id. On second execution, the server rejects with HTTP 409 Conflict preventing double processing."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Leave Management",
+      "description": "Leave quotas, application history, and leave submission endpoints.",
+      "item": [
+        {
+          "name": "Get Leave Balance & Breakdown",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/leave/balance",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leave",
+                "balance"
+              ]
+            },
+            "description": "Retrieves total allocated, used, available, and pending leave balances with breakdown by Casual Leave and Sick Leave."
+          },
+          "response": []
+        },
+        {
+          "name": "Get Leave Application History",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/leave/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leave",
+                "requests"
+              ]
+            },
+            "description": "Returns the history of all submitted leave applications for the employee with status (pending, approved, rejected)."
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Valid Leave Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"leave_type\": \"Casual Leave\",\n  \"start_date\": \"2026-12-20\",\n  \"end_date\": \"2026-12-21\",\n  \"number_of_days\": 2,\n  \"reason\": \"Attending family milestone gathering and personal travel\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/leave/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leave",
+                "requests"
+              ]
+            },
+            "description": "Submits a new valid leave application. Automatically updates available and pending balances and records the request. Returns HTTP 201."
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Leave (Short Reason Validation - 422)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"leave_type\": \"Casual Leave\",\n  \"start_date\": \"2026-12-24\",\n  \"end_date\": \"2026-12-25\",\n  \"number_of_days\": 2,\n  \"reason\": \"Sick\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/leave/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leave",
+                "requests"
+              ]
+            },
+            "description": "Demonstrates server validation for minimum reason length. Reason has only 4 non-whitespace chars (minimum required is 10). Returns HTTP 422 with StatusCode 6001."
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Leave (Overlapping Request - 409 Conflict)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-employee-id",
+                "value": "{{employeeId}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"leave_type\": \"Casual Leave\",\n  \"start_date\": \"2026-11-24\",\n  \"end_date\": \"2026-11-26\",\n  \"number_of_days\": 3,\n  \"reason\": \"Duplicate date range submission test\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/leave/requests",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "leave",
+                "requests"
+              ]
+            },
+            "description": "Demonstrates conflict validation against existing active requests. Dates 2026-11-24 to 2026-11-26 overlap an existing pending leave. Returns HTTP 409."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
+
